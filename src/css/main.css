@@ -122,11 +122,9 @@ ul,ol,li {
 /*======================================*/
 
 #common-container{
-
-	padding-top:2vw;  
 	display: grid;
 	grid-template-columns:minmax(max-content,6fr) minmax(max-content, 4fr);
-	grid-template-rows:max-content 1fr max-content;
+	grid-template-rows:max-content auto max-content;
 	grid-template-areas: "logo nav"
 						 "common-main common-main"
 						 "footer footer" 
@@ -135,8 +133,8 @@ ul,ol,li {
 }
 
 #logo {
+	padding-top:2vw;  
 	justify-self:start;
-	/*align-self:center;*/
 	grid-area:logo;
 
 	margin-left:3vw;
@@ -567,6 +565,9 @@ max-with:100px  <== if it is less than 100px
 @media only screen and (max-width: 580px){
 	:root {
 		font-size:12px;
+	}
+	#common-container {
+		grid-template-rows:8vh auto 8vh;
 	}
 	#nav {
 		display:none;
