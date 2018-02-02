@@ -20,14 +20,16 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header,
 nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	font: inherit;
 	font-family: var(--font-Gotham-Medium);
+	 border:none;
 	border-style:solid;
 	border-color: black;
 	border-width: 1px;
+
 }
 img,fieldset {
 	vertical-align:middle;
@@ -138,14 +140,15 @@ ul,ol,li {
 	grid-area:logo;
 
 	margin-left:3vw;
-	background-color:orange;
+	background-color:var(--color-bg-most);
+	color:white;
 }
 
 #nav {
 	grid-area:nav;
 	justify-self:end;
 	margin-right:3vw; 
-	background-color:green;
+	background-color:var(--color-bg-most);
 
 }
 #nav > li{
@@ -153,20 +156,89 @@ ul,ol,li {
 
 }
 #nav a {
+	position: relative;
 	font-size: .875rem;
+	padding: 0.3rem;
+	color:white;
 }
+#nav a:after {
+	content: "";
+	display:inline-block;
+	position: absolute;
+	bottom:0rem;
+	left:0px;
+	width: 0;
+	height:2px;
+	background-color: white;
+	transition: all 0.4s;
+}
+#nav a:hover:after {
+	width: 100%;
+}
+
+#nav-mini {
+	display:none;
+	width: 2.7rem;
+	height: 2.2rem;
+	position: relative;
+	background-color:var(--color-bg-most);
+
+}
+.line {
+	position:absolute;
+	left:0;
+	width: 100%;
+	height: 0.4rem;
+	background-color:white;
+	transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.3s;
+}
+.line01 {
+	top:0;
+	
+}
+.line02 {
+	top: calc(50% - 0.2rem);
+}
+.line03 {
+	bottom:0;
+}
+.nav-close .line01 {
+	transform:rotate(45deg);
+	top:50%;
+}
+
+.nav-close .line02, .nav-close .line03 {
+	transform:rotate(-45deg);
+	top:50%;
+}
+
+/*#nav-close {
+	display:none;
+	position:fixed;
+	top:0;
+	right:0;
+	color:white;
+	padding:2vw 5vw;
+	font-size:7vw;
+}
+#nav-close:hover,
+#nav-close:focus {
+    color: grey;
+    cursor: pointer;
+}*/
 
 #footer {
 	grid-area:footer;
 	justify-self:end;
 	padding-bottom:2vw;      
 	padding-right:2vw;
-	background-color:blue;
+	background-color:var(--color-bg-most);
 }
 #footer p{
-	font-size:.9rem;
-	font-family:var(--font-Gotham-Book);
-	background-color:orange;
+	font-size:.7rem;
+	font-family:var(--font-Gotham-Light);
+	background-color:var(--color-bg-most);
+	color:white;
 }
 
 .background-letters {		/* background-letter*/
@@ -179,6 +251,9 @@ ul,ol,li {
 	color:lightgrey;
 
 }
+
+
+
 /*======================================*/
 /*				  HOME 				    */
 /*======================================*/
@@ -191,7 +266,7 @@ ul,ol,li {
 	grid-template-areas:"intro-text intro-visual";
 	justify-items:center;
 	align-items:center;
-	background-color:lightblue;
+	background-color:var(--color-bg-most);
 }
 
 #intro-text p:nth-child(1){
@@ -199,17 +274,19 @@ ul,ol,li {
 	font-size: 4vw;
 	font-family: var(--font-Gotham-Bold);
 	line-height:4.2vw;
+	color:white;
 }
 #intro-text p:nth-child(2) {
 	font-size: 2.3vw;
 	line-height:2.5vw;
+	color:white;
 }
 #intro-visual {
 	grid-area:intro-visual;
 	width: 85%;
 }
 #svg-container {
-	background-color: pink;
+	background-color:var(--color-bg-most);
 }
 
 #triangle-group path{
@@ -515,23 +592,7 @@ ul,ol,li {
 /*				  MODAL 			    */
 /*======================================*/
 
-#nav-mini {
-	display:none;
-}
-#nav-close {
-	display:none;
-	position:fixed;
-	top:0;
-	right:0;
-	color:white;
-	padding:2vw 5vw;
-	font-size:7vw;
-}
-#nav-close:hover,
-#nav-close:focus {
-    color: grey;
-    cursor: pointer;
-}
+
 /*#nav-close:active {
 	animation-name:slideUp;
 	animation-duration:.5s;
@@ -588,8 +649,9 @@ max-with:100px  <== if it is less than 100px
 		margin-right:3vw;
 	}
 
-	#nav.nav-modal {
+	#nav.nav-modal{
 		position:fixed;
+		top:0;
 		left:0;
 		width:100%;
 		height:100%;
@@ -599,12 +661,11 @@ max-with:100px  <== if it is less than 100px
 		justify-content:center;
 		background-color:rgba(0,0,0,0.8);
 		color:white;
-		animation-name:slideIn;
-		animation-duration:.4s;
-		animation-timing-function: ease-out;
+/*		translate: translateY(3px);
+		transform: all linear 2s;*/
 	}
 
-	@keyframes slideIn{
+/*	@keyframes slideIn{
 		from {
 			top:-100%;
 			opacity:0;
@@ -613,15 +674,17 @@ max-with:100px  <== if it is less than 100px
 			top:0;
 			opacity:1;
 		}
-	}
+	}*/
 	#nav > li{
-		padding: 3vw;
+		padding: 4vw;
 	}
 	#nav a {
 		font-size: 5vw;
 	}
 
-
+	#nav a:hover:after {
+	width: 0;
+	}
 }
 /*ABOUT MOBILE*/
 @media only screen and (max-width:970px) {

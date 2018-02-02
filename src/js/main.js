@@ -1,6 +1,8 @@
 $(function(){
 
-	setInterval(infiniteLoop, 3000);
+
+	infiniteLoop(); //put because of 3000 delay in setInterval
+	setInterval(infiniteLoop, 4000); 
 	function infiniteLoop(){ 
 		$("#triangle-group path").each(function(){
 			var xP = Math.random()* 60 - 30 ;
@@ -11,7 +13,7 @@ $(function(){
 
 			});
 
-			TweenMax.to(this, 3, {
+			TweenMax.to(this, 4, {
 				x: xP,
 				y: yP,
 				scale: randomScale,
@@ -24,14 +26,11 @@ $(function(){
 	};
 
 	$("#nav-mini").on("click", function(){
-		$("#nav").addClass("nav-modal");
-		$("#nav").show();
-		$("#nav-close").show();
-	})
-	$("#nav-close").on("click", function(){
-		$("#nav").removeClass("nav-modal");
-		$(this).hide();
-	})
+		$('#nav').toggleClass("nav-modal");
+		$(this).toggleClass("nav-close");
+
+	});
+
 	$('#lab-list a').click(function(e){
 		var filename = $(this).attr('id');
 		$('#lab-content').load("/lab/lab-list/"+filename+".html");
