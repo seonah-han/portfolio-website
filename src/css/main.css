@@ -474,11 +474,10 @@ ul,ol,li {
 #gallery1 {
 	grid-area:gallery1;
 	display:grid;
-	grid-template-columns:repeat(2,400px);
+	grid-template-columns:repeat(1,400px);
 	grid-template-rows:300px;
-	grid-template-areas: "mobile website";
+	grid-template-areas: "mobile";
 	grid-gap:20px;
-
 }
 #gallery2 {
 	grid-area:gallery2;
@@ -548,37 +547,43 @@ ul,ol,li {
 
 #portfolio-container img{
 	width:100%;
-	vertical-align:middle;
 }
+#gallery3 li:nth-child(9) img{
+	height:100%;
+
+}
+
 #gallery-modal {
 	display:none;
 	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	background-color:white;
+	top:5%;
+	left:5%;
+	width:90%;
+	background-color:var(--color-paragraph-heading);
 	color:white;
 	z-index:200;
 	color:black;
-	padding:3vw;
+	padding:3.5vw;
 }
 #gallery-modal h1{
 	padding:3rem 0;
 	font: 2rem var(--font-Gotham-Bold);
-	color:var(--color-paragraph-heading);
+	color:var(--color-gallery-heading);
 }
 #gallery-modal h2{
 	padding:2rem 0;
 }
 #gallery-modal p{
+	padding:2rem 0;
 	color:var(--color-paragraph);
 }
 #gallery-modal p::first-letter{
 	margin-left:2rem;
 }
 #gallery-modal img{
-	width:100%;
-	
+	width:95%;
+	display:block;
+	margin:0 auto;
 }
 
 #close-gallery {
@@ -840,12 +845,12 @@ max-with:100px  <== if it is less than 100px
 
 /*PORTFOLIO*/
 
-@media only screen and (max-width:1420px){
+@media only screen and (max-width:1400px){
 
 	#gallery1 {
 	grid-area:gallery1;
 	display:grid;
-	grid-template-columns:repeat(2,400px);
+	grid-template-columns:repeat(1,400px);
 	grid-template-rows:repeat(1,300px);
 	grid-gap:20px;
 	}
@@ -884,8 +889,8 @@ max-with:100px  <== if it is less than 100px
 	grid-area:gallery1;
 	display:grid;
 	grid-template-columns:70vw;
-	grid-template-rows:repeat(2,52.5vw);
-	grid-template-areas: "website" "mobile";
+	grid-template-rows:repeat(1,52.5vw);
+	grid-template-areas: "website";
 	grid-gap:3vw;
 	}
 

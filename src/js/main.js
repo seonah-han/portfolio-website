@@ -75,7 +75,6 @@ $(function(){
 			var randomDegree = Math.random()*60 -30;
 			var randomScale = Math.random()+ 0.3;
 			TweenMax.set(this, {
-
 			});
 
 			TweenMax.to(this, 4, {
