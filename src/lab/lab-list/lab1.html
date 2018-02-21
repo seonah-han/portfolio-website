@@ -1,29 +1,66 @@
-<h1>Lab1 title</h1>
-<p>I recently learned this and that Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam!</p>
-<h2>sub1</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<h2>sub2</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1>GSAP Basic</h1>
+<p>
+Modern user interfaces are no longer just statics screens. Well thought-out interface animation can deliver functional and delightful user exeperience. It shows system status and provides visual feedback to the users which help them to be more engaged to the product. GreenSock is my favorite library to work with for UI animation. It's easy to read and write a complex sequencing of animation and there are many plugins like <u>MorphSVG</u>and <u>BezierPlugin</u> that let me acheive what I need with a few lines of code. So I'd like to show you how to get started with GSAP Before we start, here is an example of GSAP in use by Sarah Drasner that she showcased in Frontend Masters class. It provides nice linear presentation of contacting. 
+</p>
+
+
+<p data-height="450" data-theme-id="light" data-slug-hash="qOdwdB" data-default-tab="result" data-user="sdras" data-embed-version="2" data-pen-title="Context-Shifting in UX Patterns" class="codepen">See the Pen <a href="https://codepen.io/sdras/pen/qOdwdB/">Context-Shifting in UX Patterns</a> by Sarah Drasner (<a href="https://codepen.io/sdras">@sdras</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2>What is GSAP?</h2>
+
+<p>
+The GSAP animation platform is composed of four main elements. <u>TweenLite</u>, <u>TweenMax</u>, <u>TimelineLite</u>, and <u>TimelineMax</u>. As the name suggests, <u>TweenLite</u> and <u>TweenMax</u>are very similar, and <u>TimelineLite</u>and <u>TimelineMax</u> are very similar. The lite versions run fast and very smoothly max version is more of an extension of the lite version. It includes more functionalities. Whereas <u>TweenLite</u> and <u>TweenMax</u> are designed to animate one thing, <u>TimelineLite</u> and <u>TimelineMax</u> is designed as containers for multiple animations. If you have multiple tweens you want to animate, you will use either <u>TimelineLite</u> or <u>TimelineMax</u>.
+</p>
+<h2>Set up</h2>
+<p>
+Here is the CDN for GSAP, this CDN includes all four components. <u>TweenLite</u>, <u>TweenMax</u>, <u>TimelineLite</u>, and <u>TimelineMax</u>.
+<code>
+	<span><</span><span>script </span><span>src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></span><span><</span><span>/script></span>
+</code>
+
+</p>
+
+<h2>Create your first tween</h2>
+<p>
+GSAP provide simple constructor to create a tween. If you want to define starting values you can use <em>from()</em>, If you want to define the final state of the animation, you can use <em>to()</em> methods.
+<code>TweenLite.from( target:Object, duration:Number, vars:Object );
+</code>
+<code>TweenLite.to( target:Object, duration:Number, vars:Object );
+</code>
+Many of the css properties can be manipulated but property names should be changed to camel case style. For example, instead of <em>background-color: blue</em> you should write <em>backgroundColor: 'blue'</em> as the following example.
+</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="ddmOYx" data-default-tab="js,result" data-user="seonah" data-embed-version="2" data-pen-title="TweenLite from(), to()" class="codepen">See the Pen <a href="https://codepen.io/seonah/pen/ddmOYx/">TweenLite from(), to()</a> by Seonah Han (<a href="https://codepen.io/seonah">@seonah</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2>Explore easing functions</h2>
+<p>
+In the example above, I used two different easing functions <em>Bounce</em> and <em>Power2</em>, GSAP provide various easing options and you can customize using <em>config()</em>
+</p>
+<p data-height="614" data-theme-id="dark" data-slug-hash="zRWorm" data-default-tab="js,result" data-user="seonah" data-embed-version="2" data-pen-title="GSAP easing examples" class="codepen">See the Pen <a href="https://codepen.io/seonah/pen/zRWorm/">GSAP easing examples</a> by Seonah Han (<a href="https://codepen.io/seonah">@seonah</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<h2>TweenMax and stagger</h2>
+
+<p>
+<u>TweenMax</u> extends <u>TweenLite</u> which means you can you anything <u>TweenLite</u> can do and more. It adds usuful features like <em>repeat()</em> <em>yoyo()</em> and etc. And when you are working with <u>TweenMax</u>, you don't have to manually add plugins like <u>CSSPlugin</u> and <u>AttrPlugin</u>.
+In the next example. I wanted to show you in particular how to use <em>staggerTo()</em> method. <em>staggerTo()</em> comes into play when you want to tween an array of objects with the same destination values, and put the same delay on each tween's start time.
+<code>TweenMax.staggerTo( targets:Array, duration:Number, vars:Object, stagger:Number)</code>
+</p>
+
+<p data-height="300" data-theme-id="dark" data-slug-hash="yvKXzm" data-default-tab="js,result" data-user="seonah" data-embed-version="2" data-pen-title="GSAP staggerTo()" class="codepen">See the Pen <a href="https://codepen.io/seonah/pen/yvKXzm/">GSAP staggerTo()</a> by Seonah Han (<a href="https://codepen.io/seonah">@seonah</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2>Multiple Tweening</h2>
+<p>GSAP really shines for complex sequencing of animation. With <u>TimelineLite</u>, you can manage multiple tweens in a incredibly simple way. Also, it's easy to later edit your animation. Here is a constuctor with tweens chained with <em>to()</em>methods.
+<code>
+var tl = new TimelineLite(); </code>
+<code>tl.to(element, 1, {left:100}).from(element, 2, {top:50}).to(element, 1, {opacity:0});	
+</code>
+</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="MQVpKj" data-default-tab="js,result" data-user="seonah" data-embed-version="2" data-pen-title="GSAP timelineLite()" class="codepen">See the Pen <a href="https://codepen.io/seonah/pen/MQVpKj/">GSAP timelineLite()</a> by Seonah Han (<a href="https://codepen.io/seonah">@seonah</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<h2>Try different plugins</h2>
+<p>There are many plugins in GSAP. Here is the link <a href='https://greensock.com/plugins/'>GreenSock Plugins</a></p>
+<!-- <p data-height="400" data-theme-id="dark" data-slug-hash="PQRjxy" data-default-tab="result" data-user="seonah" data-embed-version="2" data-pen-title="GSAP morphSVG" class="codepen">See the Pen <a href="https://codepen.io/seonah/pen/PQRjxy/">GSAP morphSVG</a> by Seonah Han (<a href="https://codepen.io/seonah">@seonah</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+ -->
