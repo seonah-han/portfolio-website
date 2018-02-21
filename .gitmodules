@@ -1,3 +1,9 @@
 [submodule "src/portfolio/portfolio-list/google-particles-animated"]
 	path = src/portfolio/portfolio-list/google-particles-animated
 	url = https://github.com/seonah-han/google-particles-animated.git
+[submodule "src/portfolio/portfolio-list/navigation-popping"]
+	path = src/portfolio/portfolio-list/navigation-popping
+	url = https://github.com/seonah-han/navigation-popping.git
+[submodule "src/portfolio/portfolio-list/navigation-grapefruit"]
+	path = src/portfolio/portfolio-list/navigation-grapefruit
+	url = https://github.com/seonah-han/navigation-grapefruit.git
